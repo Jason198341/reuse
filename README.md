@@ -1,6 +1,71 @@
-# Getting Started with Create React App
+# 재활용 도우미 앱 (Recycling Helper App)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 프로젝트 개요
+
+이 앱은 쓰레기 사진을 찍으면 재활용 가능 여부와 분리수거 방법을 알려주는 서비스입니다. ChatGPT Image API를 활용하여 이미지를 분석하고, 창의적인 재활용 아이디어도 제시합니다.
+
+## 기술 스택
+
+- 프론트엔드: React.js, React Router, Tailwind CSS
+- 백엔드/데이터베이스: Supabase (Authentication, Storage, Database)
+- 이미지 분석: ChatGPT Image API
+- 배포: Vercel 또는 Netlify
+
+## 설치 방법
+
+### 전제 조건
+
+- Node.js (v16 이상)
+- npm 또는 yarn
+
+### 설치 방법
+
+1. 레포지토리 복사
+   ```bash
+   git clone https://github.com/Jason198341/reuse.git
+   cd reuse
+   ```
+
+2. 라이브러리 설치
+   ```bash
+   npm install
+   ```
+
+3. `.env` 파일 설정
+   프로젝트 루트에 `.env` 파일을 생성하고 다음 환경 변수를 설정합니다:
+
+   ```
+   REACT_APP_SUPABASE_URL=your_supabase_url
+   REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
+   REACT_APP_OPENAI_API_KEY=your_openai_api_key
+   ```
+
+4. 액플리케이션 실행
+   ```bash
+   npm start
+   ```
+   브라우저에서 http://localhost:3000 에 접속하여 앱을 확인해보세요.
+
+## 주요 기능
+
+1. **이미지 업로드**: 사용자가 쓰레기 사진을 캡처하거나 업로드할 수 있는 인터페이스
+2. **이미지 분석**: ChatGPT Image API를 활용해 쓰레기 재질 및 종류 식별
+3. **분리수거 안내**: 식별된 품목에 대한 정확한 분리수거 방법 안내
+4. **사용자 기록**: Supabase를 활용해 사용자의 재활용 이력 저장 및 관리
+5. **창의적 재활용 아이디어**: 분석된 쓰레기를 활용한 창의적인 재활용 방법 제안
+
+## 프로젝트 구조
+
+- `/src/components`: 재사용 가능한 UI 컴포넌트
+- `/src/pages`: 앱의 메인 페이지
+- `/src/services`: API 통신 및 데이터 처리
+- `/src/contexts`: 상태 관리 및 켄텍스트
+- `/src/hooks`: 커스텀 훅
+
+## 보안 관련 주의사항
+
+이 앱은 클라이언트 측에서 API 키를 사용하고 있으며, 이는 보안상 위험할 수 있습니다. 실제 프로덕션 환경에서는 백엔드를 통해 API 통신을 처리하는 것이 좋습니다.
+
 
 ## Available Scripts
 
